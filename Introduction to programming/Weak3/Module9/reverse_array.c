@@ -9,18 +9,22 @@ int main()
     {
        scanf("%d", &arr[i]);
     }
-    int idx;
-    scanf("%d", &idx);
-
-    for (int i = idx; i < n - 1; i++)
+    int i = 0;
+    int j = n-1;
+    while (i < j)
     {
-       arr[i] = arr[i+1];
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+
+        i++;
+        j--;
     }
-    n--;
     for (int i = 0; i < n; i++)
     {
-       printf("%d ", arr[i]);
+       printf("%d ",arr[i]);
     }
+    
     return 0;
     
 }
